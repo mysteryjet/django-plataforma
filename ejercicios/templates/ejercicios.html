@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Iniciación al Cómputo 1</h1>
+<h2>Ejercicios</h2>
+
+{% for ejercicio in ejercicios %}
+
+<div class="p-3">
+    <div class="card card-body bg-black">
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ejercicio.image1.url}}" alt="{{ejercicio.title}}" class="img-fluid">
+
+            </div>
+            <div class="col-9">
+                <h2>{{ejercicio.title}}</h2>
+                <p>{{ejercicio.description|striptags|truncatechars:300}}</p>
+                <h3>{{ejercicio.date|date:'d l, F Y'}}</h3>
+        
+                <a href="{%url 'ejercicios:ejercicio_detail' ejercicio.id%}" class="btn btn-info" target="_blank">Ver ejercicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

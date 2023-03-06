@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+{% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4 card bg-black p-4">
+        <img src="{% static 'portfolio/profile_image.png' %}" alt="foto-perfil">
+    </div>
+
+    <div class="col-md-8 my-auto p-1">
+        <h1>Mi nombre es Manuel Gualito.</h1>
+        <p>Estudiante de <b>Licenciatura en Informática</b>.</p>
+        <p>Mi nombre completo es José Manuel Gualito Vázquez. Soy Licenciado en Psicología en la <b>Facultad de Estudios Superiores Iztacala</a></b></p>
+        <p>Actualmente estudio el <em>sexto semestre</em> de la Carrera de Informática en la <b>Facultad de Estudios Superiores Cuautitlán</b></p>
+    <a href={% static 'portfolio/portada.pdf' %} class="btn btn-info btn-lg rounded-0 my-3" target="_blank">Descargar ejecicios</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+    <h3>Acerca de</h3>
+    <div class="text-tr">
+        <p>Este proyecto fue creado con la intención de que pueda servir como un portafolio donde pueda ir almacenando mis proyectos tanto personales como escolares.
+            En este caso, aquí se podrá encontrar una sección correspondiente al curso de <b>Iniciación a Cómputo 1</b>, en la cual se desplegarán los ejercicios con sus respectivas capturas de pantallas, solicitadas por el profesor.
+        </p>
+    </div>
+
+{% for project in projects %}
+
+<div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+        <img src="{{project.image.url}}" alt="{{project.title}}" class="img-top"/>
+        <div class="card-body">
+
+            <h2>{{project.title}}</h2>
+            <p>{{project.description}}</p>
+            
+
+            {% if project.url %}
+            <a href="{{project.url}}" class="btn btn-outline-info rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{%endblock%}
+</div>

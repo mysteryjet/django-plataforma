@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: #171717;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+.bg-black {
+    background: #000;
+}
+
+/*PARRAFOS TRANSICION*/
+.text-tr {
+    text-align: center;
+    font-size: 100%;
+    transition: 2s;
+    display: block;
+}
+.text-tr:hover {
+    display: block;
+    transform: scale(1.2);
+    overflow: auto;
+}
+
+/* TARJETA DE PROYECTOS*/
+.card-project:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
+    animation: transitionCard 0.75s;
+}
+
+/*CAMBIAR DE COLOR TEXTO SELECCIONADO*/
+::selection {
+    color:#000;
+    background: aqua;
+}
+
+/*FOOTER*/
+.footer {
+    width: auto;
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+.inner_footer {
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+    text-align: center;
+    display: inline;
+}
+
+footer {
+    font-size: 16px;
+    overflow: hidden;
+    bottom: 0px;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* TRANSICIONES */
+.container {
+    animation: transitionIn 1.5s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes transitionCard {
+    from {
+        opacity: 0.5;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+
+
+
+
+
