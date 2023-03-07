@@ -17,6 +17,26 @@ a:link, a:visited {
     background: #000;
 }
 
+/* EFECTO IMAGEN */
+
+.card-imagen img {
+    transition: all 1.3s ease;
+}
+
+.card-imagen:hover img {
+    transform: scale(.7);
+}
+
+/* BOTÓN EFECTO */
+.btn-1 {
+    transition: .4s all;
+}
+
+.btn-1:hover {
+    transform: translateY(-8px);
+    padding: auto;
+}
+
 /*PARRAFOS TRANSICION*/
 .text-tr {
     text-align: center;
