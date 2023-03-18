@@ -1,50 +1,97 @@
 {% extends 'layout.html' %}
 
 {% block content%}
-
-{% load static %}
-
-<header class="row bg-black">
-    <div class="col-md-4 card bg-black p-4 card-imagen">
-        <img src="{% static 'portfolio/profile_image.png' %}" alt="foto-perfil">
-    </div>
-
-    <div class="col-md-8 my-auto p-1">
-        <h1>Mi nombre es Manuel Gualito.</h1>
-        <p>Estudiante de <b>Licenciatura en Informática</b>.</p>
-        <p>Mi nombre completo es José Manuel Gualito Vázquez. Soy Licenciado en Psicología en la <b>Facultad de Estudios Superiores Iztacala</a></b></p>
-        <p>Actualmente estudio el <em>sexto semestre</em> de la Carrera de Informática en la <b>Facultad de Estudios Superiores Cuautitlán</b></p>
-    <a href={% static 'portfolio/portada.pdf' %} class="btn btn-info btn-lg rounded-0 my-3 btn-1" target="_blank">Descargar ejecicios</a>
-    </div>
-</header>
-
-<div class="row my-4 text-center">
-    <h3>Acerca de</h3>
-    <div class="text-tr">
-        <p>Este proyecto fue creado con la intención de que pueda servir como un portafolio donde pueda ir almacenando mis proyectos tanto personales como escolares.
-            En este caso, aquí se podrá encontrar una sección correspondiente al curso de <b>Iniciación a Cómputo 1</b>, en la cual se desplegarán los ejercicios con sus respectivas capturas de pantallas, solicitadas por el profesor.
-        </p>
-    </div>
-
-{% for project in projects %}
-
-<div class="col-md-4 p-4">
-    <div class="card bg-black card-project">
-        <img src="{{project.image.url}}" alt="{{project.title}}" class="img-top"/>
-        <div class="card-body">
-
-            <h2>{{project.title}}</h2>
-            <p>{{project.description}}</p>
-            
-
-            {% if project.url %}
-            <a href="{{project.url}}" class="btn btn-outline-info rounded-0 btn-sm" target="_blank">{{project.url}}</a>
-            {% endif %}
+<!-- Parte superior-->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Proyecto Iniciación a cómputo 2</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Bienvenido a mi sitio web.</h2>
+                <a class="btn btn-info" href="#about">Conoce más de mi</a>
+            </div>
         </div>
     </div>
-</div>
+</header>
+{% load static %}
 
-{% endfor %}
+<!-- About me-->
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-white mb-4">Acerca de este proyecto</h2>
+                <p class="text-white-50">
+                    Plataforma realizada como Proyecto del Curso Iniciación a Cómputo 2. Tiene como finalidad <br>
+                    presentar una página web y por medio de esta, presentar los Ejercicios solicitados <br>
+                    en el curso de <strong>Iniciación a Cómputo 1</strong>. <br>
+                    La plataforma se realizó con Python, Django y utlizando Bootstrap 5.
+                </p>
+            </div>
+        </div>
+        <img class="img-fluid" src="{% static 'portfolio/wolf.webp' %}" alt="fondp" />
+    </div>
+</section>
+
+
+
+<header class="row bg-black" style="padding-left: 10rem; padding-right: 10rem;">
+        <div class="col-md-4 card bg-black p-4 card-imagen">
+            <img src="{% static 'portfolio/profile_image.png' %}" alt="foto-perfil">
+        </div>
+        <div class="col-md-8 my-auto p-1">
+            <h1 class="text-light">Mi nombre es Manuel Gualito.</h1><br>
+            <p class="text-light">Estudiante de <b>Licenciatura en Informática</b>.</p>
+            <p class="text-light">Mi nombre completo es José Manuel Gualito Vázquez. Soy Licenciado en Psicología en la <b>Facultad de Estudios Superiores Iztacala</a></b></p>
+            <p class="text-light">Actualmente estudio el <em>sexto semestre</em> de la Carrera de Informática en la <b>Facultad de Estudios Superiores Cuautitlán</b></p>
+        <a href={% static 'portfolio/portada.pdf' %} class="btn btn-info btn-lg rounded-0 my-3 btn-1" target="_blank">Descargar ejecicios</a>
+        </div>
+</header>
+
+<!-- Contacto-->
+<section class="contact-section bg-black" id="contacto">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-white mb-4 text-center">Contáctame!</h2>
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 style="color:black;" class="text-uppercase m-0">Dirección</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">Estado de Mexico, México.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 style="color:black;" class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">
+                            <a href="mailto: elmanubc@gmail.com">elmanubc@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Teléfono</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">
+                            (55) 7667-5913
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+            <a class="mx-2" href="https://github.com/"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
 
 {%endblock%}
-</div>
