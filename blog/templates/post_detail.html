@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<div class="text-center">
+<div class="text-center row d-block pt-5" style="padding-left: 10rem; padding-right: 10rem;">
     <h2>{{post.title}}</h2>
-    <h3 class="my-2 h5 text-muted">{{post.date|date:'F jD Y'}}</h3>
+    <h3 class="text-light my-2 h5 text-muted">{{post.date|date:'F jD Y'}}</h3>
 
     <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
 
-    <div class="my-4">
-        <p>{{post.description|safe}}</p>
+    <div class="my-4 col-md-12 d-block publicacion">
+        <p class="text-black mt-3">{{post.description|safe}}</p>
     </div>
 </div>
 

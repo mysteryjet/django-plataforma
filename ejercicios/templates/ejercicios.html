@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>Iniciación al Cómputo 1</h1>
-<h2>Ejercicios</h2>
 
+<!--
 {% for ejercicio in ejercicios %}
 
 <div class="p-3">
@@ -24,4 +23,41 @@
 </div>
 
 {% endfor %}
+-->
+
+<!--MOSTRAR IMAGEN CON PEQUEÑA DESCRIPCIÓN DEL EJERCICIO-->
+<header class="row color-fondo" style="padding-left: 10rem; padding-right: 10rem;">
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12 my-5">
+            <h1 class="text-light" style="font-family: 'Varela Round', Roboto, 'Segoe UI';">Iniciación al Cómputo 1</h1>
+            <h2 class="text-light" style="font-family: 'Varela Round', Roboto, 'Segoe UI';">Ejercicios</h2>
+        </div>
+        
+        <div class="col-md-12">
+            <h1>{{ ejercicio.title }}</h1>
+            <hr class="border border-white border-2 opacity-50 py-2">
+            <div class="row gy-3 pb-5">
+            {% for ejercicio in ejercicios %}
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="category-image">
+                                <img src="{{ejercicio.image1.url}}" alt="{{ejercicio.title}}" class="w-100"/>
+                            </div>
+                            <h4 class="card-title text-center">{{ ejercicio.title }}</h4>
+                            <p>{{ejercicio.description|striptags|truncatechars:300}}</p>
+                            <h3>{{ejercicio.date|date:'d l, F Y'}}</h3>
+                            <a href="{%url 'ejercicios:ejercicio_detail' ejercicio.id%}" class="btn btn-info btn-1" target="_blank">Ver ejercicio</a>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<hr class="border border-white border-2 opacity-50 py-2">
+</header>
+
 {% endblock %}

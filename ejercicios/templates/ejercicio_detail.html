@@ -1,19 +1,25 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<div class="text-center">
-    <h2>{{ejercicio.title}}</h2>
-    <h3 class="my-2 h5 text-muted">{{ejercicio.date|date:'F d, Y'}}</h3>
-
-    <div class="my-4">
-        <p>{{ejercicio.description|safe}}</p>
+<header class="row color-fondo" style="padding-left: 10rem; padding-right: 10rem;">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 my-5">
+                <h1 class="text-light" style="font-family: 'Varela Round', Roboto, 'Segoe UI';">{{ejercicio.title}}</h1>
+                <h2 class="text-light my-2 h5 text-muted" style="font-family: 'Varela Round', Roboto, 'Segoe UI';">{{ejercicio.date|date:'F d, Y'}}</h2>
+                <p class="text-light fs-5">{{ejercicio.description|safe}}</p>
+            </div>
+            <div class="col-md-12">
+                <hr class="border border-white border-2 opacity-50">
+                <h3 class=" text-light my-2 h5">Código: </h3>
+                <img src="{{ejercicio.image1.url}}" alt="{{ejercicio.title}}" class="img-thumbnail-custom py-4"/>
+                <hr class="border border-white border-2 opacity-50">
+                <h3 class=" text-light my-2 h5">Ejecucución del programa: </h3>
+                <img src="{{ejercicio.image2.url}}" alt="{{ejercicio.title}}" class="img-fluid py-4"/>
+            </div>
+        </div>
     </div>
-    <h4>Código:</h4>
-    <img src="{{ejercicio.image1.url}}" alt="{{ejercicio.title}}" class="img-fluid">
-    <h4>Ejecución del programa:</h4>
-    <img src="{{ejercicio.image2.url}}" alt="{{ejercicio.title}}" class="img-fluid">
-
-    
-</div>
+    <hr class="border border-white border-2 opacity-50 py-2">
+</header>
 
 {% endblock %}
